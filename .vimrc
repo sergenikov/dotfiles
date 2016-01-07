@@ -55,7 +55,7 @@ let python_highlight_all = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Setup delimitMate
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-so /home/sergey/.vim/bundle/delimitMate/test/_setup.vim
+so $HOME/.vim/bundle/delimitMate/test/_setup.vim
 let delimitMate_expand_cr = 1
 filetype indent plugin on
 
