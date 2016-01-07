@@ -1,1 +1,5 @@
 This is my vim and tmux config files. All plugin credit goes to respective developers. I am also still learning some tricks and some parts of vimrc or tmux.conf might be not correct, but I fix them as I go.
+
+After cloning do:
+$ git submodules init
+$ git submodules update
