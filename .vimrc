@@ -113,7 +113,10 @@ inoremap <C-s> <esc>:w<CR>
 
 nnoremap <F5> :NERDTreeToggle<CR>
 " tagbar toggle - show file structure, functions and stuff
-nmap <F6> :TagbarToggle<CR>
+nnoremap <F6> :TagbarToggle<CR>
+" jj to <esc>
+inoremap jj <esc>
+
 
 command SolLight call SetSolarized("light")
 command SolDark call SetSolarized("dark")
