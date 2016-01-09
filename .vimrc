@@ -102,8 +102,8 @@ nnoremap <F4>  :noh<CR>
 "quickly inserts ; at the end of the line
 inoremap <C-e> <esc>A;<esc>
 "insert comments
-nnoremap <C-_> mq0wi//<esc>`q
-nnoremap <A-_> mq0wi//<esc>`q
+nnoremap <C-_> mq^i//<esc>`q
+nnoremap <A-/> mq^i//<esc>`q
 "switching buffers
 nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>l :bnext<CR>
@@ -231,10 +231,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 function CommentOut(c)
     "add comment if 0
     if a:c == 0
-        execute "normal mq0wi//\<esc>`q"
+        execute "normal mq^i//\<esc>`q"
+        echom "hello"
     "remove comment if 
     else
-        execute "normal mq0wxx\<esc>`q"
+        execute "normal mq^xx\<esc>`q"
     endif
 endfunction
 
