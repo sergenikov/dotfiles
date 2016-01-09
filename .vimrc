@@ -4,8 +4,8 @@ filetype indent plugin on
 set nu
 set rnu
 set tabstop=2
-set tabpagemax=7
-set showtabline=2
+"set tabpagemax=7
+"set showtabline=2
 " hide gui labels for gvim
 set guitablabel=%t
 set guioptions=agim
@@ -20,8 +20,8 @@ set hidden
 " mouse can't select text, just position
 set mouse=nicr
 " set tab and autoindent width to 2 spaces
-set shiftwidth=2
-set softtabstop=2
+"set shiftwidth=2
+"set softtabstop=2
 
 syntax on
 
@@ -107,6 +107,7 @@ nnoremap <A-/> mq^i//<esc>`q
 "switching buffers
 nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>l :bnext<CR>
+nnoremap <leader>s :w<CR>
 "map save :w operation
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>
