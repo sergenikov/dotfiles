@@ -284,4 +284,4 @@ endfunction
 
 
 
-source /home/sergey/.vimconfig/.neocomprc
+"source /home/sergey/.vimconfig/.neocomprc
