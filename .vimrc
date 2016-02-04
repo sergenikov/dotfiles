@@ -21,6 +21,8 @@ set mouse=nicr
 " set tab and autoindent width to 2 spaces
 "set shiftwidth=2
 "set softtabstop=2
+
+" configs below thanks to: http://nvie.com/posts/how-i-boosted-my-vim/
 set nowrap                      "don't wrap lines
 set tabstop=4                   "tab is four spaces
 set backspace=indent,eol,start  "allow backspacing over everthing in insert mode
