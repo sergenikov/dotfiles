@@ -36,6 +36,13 @@ set smartcase                   "ignore case if search pattern is all lowercase,
                                 "case sensitive otherwise
 set smarttab                    "insert tabs on the start of a line according to
                                 "shiftwidth, not tabstop
+
+set history=1000                "remember 1000 commands and search history lines
+set undolevels=1000             "more undo levels
+set title                       "change terminal title
+set visualbell                  "don't beep
+set noerrorbells                "don't beep
+
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
