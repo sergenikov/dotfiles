@@ -40,8 +40,8 @@ set smarttab                    "insert tabs on the start of a line according to
 set history=1000                "remember 1000 commands and search history lines
 set undolevels=1000             "more undo levels
 set title                       "change terminal title
-set visualbell                  "don't beep
-set noerrorbells                "don't beep
+"set visualbell                  "don't beep
+"set noerrorbells                "don't beep
 
 syntax on
 
@@ -140,8 +140,8 @@ inoremap jj <esc>
 
 nnoremap <F7> :set paste!<CR>
 
-command SolLight call SetSolarized("light")
-command SolDark call SetSolarized("dark")
+command! SolLight call SetSolarized("light")
+command! SolDark call SetSolarized("dark")
 
 command! Comment normal mq^i//<esc>`q
 command! Uncomment normal mq^2x<esc>`q
@@ -256,7 +256,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Add/remove comments in current line
 " Does not work as needed right now
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function CommentOut(c)
+function! CommentOut(c)
     "add comment if 0
     if a:c == 0
         execute "normal mq^i//\<esc>`q"
@@ -269,7 +269,7 @@ endfunction
 
 
 "Function for commenting a block of Visually selected text
-function Comment(fl, ll)
+function! Comment(fl, ll)
   let i=a:fl
   let comment="//"
   while i<=a:ll
