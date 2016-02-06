@@ -43,6 +43,10 @@ set title                       "change terminal title
 "set visualbell                  "don't beep
 "set noerrorbells                "don't beep
 
+"terminal background for custom themes
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,7 +54,7 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin on
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-go configuration
 " Go syntax highlight in vim 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
