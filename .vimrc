@@ -44,8 +44,8 @@ set title                       "change terminal title
 "set noerrorbells                "don't beep
 
 "terminal background for custom themes
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+"highlight Normal ctermbg=none
+"highlight NonText ctermbg=none
 
 syntax on
 
@@ -150,6 +150,8 @@ command! SolDark call SetSolarized("dark")
 command! Comment normal mq^i//<esc>`q
 command! Uncomment normal mq^2x<esc>`q
 
+nnoremap <C-j> :GoDef<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color term settings for different terminals
 " TODO this config is not right, but it is working for the time being.
@@ -200,7 +202,7 @@ set foldlevel=99
 "let g:solarized_termcolors=256
 "set background=light
 "set background=dark
-colorscheme atom-dark-256
+colorscheme molokai
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -305,7 +307,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setting solarized color scheme takes more than one command
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function SetSolarized(color)
+function! SetSolarized(color)
     let g:solarized_termcolors=256
     if a:color == "light"
         set background=light
