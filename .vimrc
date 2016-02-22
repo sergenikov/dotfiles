@@ -3,11 +3,11 @@ filetype indent plugin on
 
 set nu
 set rnu
-"set tabpagemax=7
-"set showtabline=2
+set tabpagemax=7
+set showtabline=2
 " hide gui labels for gvim
 set guitablabel=%t
-set guioptions=agim
+"set guioptions=agim
 "correct backspace issues - 2 makes it always on
 set backspace=2
 set linebreak
@@ -23,7 +23,7 @@ set mouse=nicr
 "set softtabstop=2
 
 " configs below thanks to: http://nvie.com/posts/how-i-boosted-my-vim/
-set nowrap                      "don't wrap lines
+"set nowrap                      "don't wrap lines
 set tabstop=4                   "tab is four spaces
 set backspace=indent,eol,start  "allow backspacing over everthing in insert mode
 set autoindent                  "always set autoindenting on
@@ -152,6 +152,15 @@ command! Uncomment normal mq^2x<esc>`q
 
 nnoremap <C-j> :GoDef<CR>
 
+command! Hd1 normal 80i=<esc>
+command! Hd2 normal 80i-<esc>
+command! FH normal 80/-<esc>
+
+"Emacs like binding for some commands
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+"inoremap <C-BS> <C-w>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color term settings for different terminals
 " TODO this config is not right, but it is working for the time being.
@@ -180,10 +189,12 @@ nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <A-Left> :tabprevious<CR>
+nnoremap <A-Right> :tabnext<CR>
+nnoremap <C-Left> :bprevious<CR>
+nnoremap <C-Right> :bnext<CR>
+"nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+"nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===indent folding
@@ -199,10 +210,10 @@ set foldlevel=99
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " color schemes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:solarized_termcolors=256
-"set background=light
-"set background=dark
-colorscheme molokai
+let g:solarized_termcolors=256
+set background=light
+set background=dark
+"colorscheme molokai
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -236,12 +247,12 @@ set expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " configure font for gvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("gui_running")
-    if has("gui_gtk2")
-        set guifont=Monospace\ 9
-        colorscheme atom-dark-256
-    endif
-endif
+"if has("gui_running")
+    "if has("gui_gtk2")
+        "set guifont=Monospace\ 9
+        "colorscheme atom-dark-256
+    "endif
+"endif
 " gui configuration done
 
 
@@ -324,7 +335,7 @@ endfunction
 " Function has to be defined before calling it. SolLight command is 
 " bound to this function.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"execute "SolLight"
+execute "SolLight"
 
 
 
