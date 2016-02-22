@@ -136,7 +136,7 @@ nnoremap <leader>s :w<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>
 
-nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <F5> :Explore<CR>
 " tagbar toggle - show file structure, functions and stuff
 nnoremap <F6> :TagbarToggle<CR>
 " jj to <esc>
