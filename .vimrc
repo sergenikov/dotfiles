@@ -1,7 +1,7 @@
 execute pathogen#infect()
 filetype indent plugin on
 
-set nu
+"set nu
 set rnu
 set tabpagemax=7
 set showtabline=2
@@ -46,6 +46,10 @@ set title                       "change terminal title
 "terminal background for custom themes
 "highlight Normal ctermbg=none
 "highlight NonText ctermbg=none
+
+" terminal gui options - remove gui
+set guioptions-=m
+set guioptions-=T
 
 syntax on
 
@@ -92,6 +96,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+nnoremap <leader>p :CtrlPBuffer<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " custom ctrlp ignore settings
@@ -213,7 +219,7 @@ set foldlevel=99
 let g:solarized_termcolors=256
 set background=light
 set background=dark
-"colorscheme molokai
+colorscheme atom-dark-256
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -247,13 +253,13 @@ set expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " configure font for gvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"if has("gui_running")
-    "if has("gui_gtk2")
-        "set guifont=Monospace\ 9
-        "colorscheme atom-dark-256
-    "endif
-"endif
-" gui configuration done
+if has("gui_running")
+    if has("gui_gtk2")
+        set guifont=Monospace\ 9
+        colorscheme atom-dark-256
+    endif
+endif
+"gui configuration done
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -335,8 +341,7 @@ endfunction
 " Function has to be defined before calling it. SolLight command is 
 " bound to this function.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-execute "SolLight"
+"execute "SolLight"
 
 
-
-source /home/sergey/.vimconfig/.neocomprc
+"source /home/sergey/.vimconfig/.neocomprc
