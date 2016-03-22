@@ -98,6 +98,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 nnoremap <leader>p :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRU<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " custom ctrlp ignore settings
@@ -142,7 +143,8 @@ nnoremap <leader>s :w<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>
 
-nnoremap <F5> :Explore<CR>
+nnoremap <F5> :NERDTreeToggle<CR>
+
 " tagbar toggle - show file structure, functions and stuff
 nnoremap <F6> :TagbarToggle<CR>
 " jj to <esc>
