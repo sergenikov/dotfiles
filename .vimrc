@@ -1,8 +1,9 @@
 execute pathogen#infect()
 filetype indent plugin on
 
-"set nu
-set rnu
+let mapleader = ","
+set nu
+"set rnu
 set tabpagemax=7
 set showtabline=2
 " hide gui labels for gvim
@@ -77,7 +78,7 @@ highlight Comment cterm=bold
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set tabstop=4 for python and add python highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd Filetype python setlocal tabstop=4
+"autocmd Filetype python setlocal tabstop=4
 let python_highlight_all = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,7 +98,7 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-nnoremap <leader>p :CtrlPBuffer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRU<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,7 +126,6 @@ set tags=tags;
 "Key and command mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set leader key
-let mapleader = ","
 
 nnoremap <F2>  :set hlsearch!
 nnoremap <F3>  :set cursorline!
@@ -221,7 +221,7 @@ set foldlevel=99
 let g:solarized_termcolors=256
 set background=light
 set background=dark
-colorscheme atom-dark-256
+colorscheme atom-dark-256 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -235,7 +235,7 @@ colorscheme atom-dark-256
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "NOTE set autocomplete for html on HTML file type open
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 set smartindent
 set shiftwidth=4
 set expandtab
@@ -258,7 +258,7 @@ set expandtab
 if has("gui_running")
     if has("gui_gtk2")
         set guifont=Monospace\ 9
-        colorscheme atom-dark-256
+        colorscheme molokai 
     endif
 endif
 "gui configuration done
@@ -268,7 +268,7 @@ endif
 " configure airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
-let g:airline#extensions#tabline#enabled=1
+"let g:airline#extensions#tabline#enabled=1
 " Just show the filename (no path) in the tab
 let g:airline#extensions#tabline#fnamemod = ':t'
 " configure special symbols
