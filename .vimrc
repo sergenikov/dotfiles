@@ -222,7 +222,7 @@ set foldlevel=99
 let g:solarized_termcolors=256
 set background=light
 set background=dark
-colorscheme atom-dark-256 
+colorscheme monokai 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,7 +259,7 @@ set expandtab
 if has("gui_running")
     if has("gui_gtk2")
         set guifont=Monospace\ 9
-        colorscheme molokai 
+        colorscheme monokai 
     endif
 endif
 "gui configuration done
