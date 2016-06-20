@@ -1,0 +1,50 @@
+shell 
+;
+shell git pull
+search vim_config
+de
+del
+mkdir
+mkdir printer-drivers
+open_with transmission-gtk
+search compiler
+search vim
+rename .vc
+search drio
+search platform
+search css
+rename q1.txt
+rename q2.txt
+rename q3.txt
+search 442
+rename q2-c1
+rename q2-c1.png
+rename q2-c2.png
+search gowork
+search 416
+search neo
+search vimconf
+search bashrc
+open_with 
+open_with vim
+
+open_with emacs -nw
+search .emacsconfig
+search emacs
+search emacs.d
+search .emacs.d
+search 320
+search nota
+search mybooks
+search drop
+search 
+search thaw
+search pre
+search books
+search app
+search appel
+search java
+delete 
+search key
+search .p
+search .

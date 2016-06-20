@@ -1,0 +1,72 @@
+!XTerm*faceName: Droid\ Sans\ Mono\ Regular
+XTerm*faceName: Monospace
+!XTerm*faceName: terminus 
+XTerm*faceSize: 9
+XTerm*saveLines: 16384
+XTerm*loginShell: true
+XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+XTerm*eightBitInput: false
+XTerm*selectToClipboard: true
+XTerm*vt100.renderFont: true
+xterm*termName: xterm-256color
+
+xterm*VT100.geometry: 80x25
+XTerm*dynamicColors: true
+XTerm*utf8: 2
+XTerm*scrollKey: true
+XTerm*scrollTtyOutput: false
+XTerm*jumpScroll: true
+XTerm*multiScroll: true
+XTerm*toolBar: false
+
+XTerm*transparent: false
+
+! Tango Color Scheme (Again)
+XTerm*color0: #2e3436
+XTerm*color1: #cc0000
+XTerm*color2: #4e9a06
+XTerm*color3: #c4a000
+XTerm*color4: #3465a4
+XTerm*color5: #75507b
+XTerm*color6: #0b939b
+XTerm*color7: #d3d7cf
+XTerm*color8: #555753
+XTerm*color9: #ef2929
+XTerm*color10: #8ae234
+XTerm*color11: #fce94f
+XTerm*color12: #729fcf
+XTerm*color13: #ad7fa8
+XTerm*color14: #00f5e9
+XTerm*color15: #eeeeec
+
+
+! terminal colors ------------------------------------------------------------
+
+! tangoesque scheme
+!XTerm*background: #111111
+!XTerm*foreground: #babdb6
+!! Black (not tango) + DarkGrey
+!XTerm*color0: #000000
+!XTerm*color8: #555753
+!! DarkRed + Red
+!XTerm*color1: #ff6565
+!XTerm*color9: #ff8d8d
+!! DarkGreen + Green
+!XTerm*color2: #93d44f
+!XTerm*color10: #c8e7a8
+!! DarkYellow + Yellow
+!XTerm*color3: #eab93d
+!XTerm*color11: #ffc123
+!! DarkBlue + Blue
+!XTerm*color4: #204a87
+!XTerm*color12: #3465a4
+!! DarkMagenta + Magenta
+!XTerm*color5: #ce5c00
+!XTerm*color13: #f57900
+!!DarkCyan + Cyan (both not tango)
+!XTerm*color6: #89b6e2
+!XTerm*color14: #46a4ff
+!! LightGrey + White
+!XTerm*color7: #cccccc
+!XTerm*color15: #ffffff
+
