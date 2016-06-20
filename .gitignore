@@ -1,1 +1,3 @@
 .tmux/resurrect/*.txt
+os/ranger/bookmarks
+os/ranger/history
