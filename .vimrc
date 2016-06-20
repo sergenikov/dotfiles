@@ -130,6 +130,7 @@ set tags=tags;
 nnoremap <F2>  :set hlsearch!
 nnoremap <F3>  :set cursorline!
 nnoremap <F4>  :noh<CR>
+nnoremap <Space>  :noh<CR>
 "quickly inserts ; at the end of the line
 inoremap <C-e> <esc>A;<esc>
 "insert comments
