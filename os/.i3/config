@@ -284,7 +284,6 @@ workspace_layout stacking
 # Start up applications
 ###############################################################################
 exec nm-applet &
-#exec compton -f &
 exec xautolock -time 5 -locker screenlock
 exec dropbox start &
 exec cpulimit -e dropbox -l 10
