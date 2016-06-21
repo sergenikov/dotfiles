@@ -1,6 +1,0 @@
-pane	0	0	:vim	1	:*	0	:/home/sergey/projects/algorithms	0	vim	:vim mergesort.c
-pane	0	0	:vim	1	:*	1	:/home/sergey	1	vim	:vim /home/sergey/.tmux.conf
-pane	0	1	:ranger	0	:-	0	:/home/sergey/Downloads	1	python	:/usr/bin/python -O /usr/bin/ranger
-window	0	0	1	:*	3169,181x69,0,0{90x69,0,0,0,90x69,91,0,2}
-window	0	1	0	:-	d500,181x69,0,0,3
-state	0	

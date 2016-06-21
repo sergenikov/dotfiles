@@ -1,6 +1,0 @@
-pane	0	0	:ranger	1	:*	0	:/home/sergey/Downloads	1	python	:/usr/bin/python -O /usr/bin/ranger
-pane	0	1	:vim	0	:-	0	:/home/sergey/projects/algorithms	1	vim	:vim mergesort.c
-pane	0	1	:vim	0	:-	1	:/home/sergey/projects/algorithms	0	bash	:
-window	0	0	1	:*	d500,181x69,0,0,3
-window	0	1	0	:-	3169,181x69,0,0{90x69,0,0,0,90x69,91,0,2}
-state	0	
