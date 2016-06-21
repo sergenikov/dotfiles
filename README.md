@@ -3,3 +3,4 @@ This is my vim and tmux config files. All plugin credit goes to respective devel
 After cloning do:
 $ git submodules init
 $ git submodules update
+$ git submodule update --recursive
