@@ -15,10 +15,10 @@
 ;; CONFIGS THAT MAKES SENSE
 ;; highlight matching parentheses
 (show-paren-mode 1)
-(set-frame-font "Monospace-9")
+;; (set-frame-font "Monospace-9")
 ;; set tab width to 2
 (setq tab-width 2)			;
-(global-relative-line-numbers-mode)
+;; (global-relative-line-numbers-mode)
 (load-theme 'atom-dark t)
 ;; auto close bracket insertion. New in emacs 24
 (electric-pair-mode 1)
@@ -50,12 +50,12 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 ;; turn off emacs's c-u to remap to c-u in vim - should happen before evil is enabled
-(setq evil-want-C-u-scroll t)
-(require 'evil)
-(evil-mode 1)
+;; (setq evil-want-C-u-scroll t)
+;; (require 'evil)
+;; (evil-mode 1)
 
 ;; go mode setup
-(require 'go-mode-load)
+;; (require 'go-mode-load)
 
 ;; setup PATH environment
 (defun set-exec-path-from-shell-PATH ()
