@@ -3,7 +3,7 @@ filetype indent plugin on
 
 let mapleader = ","
 set nu
-"set rnu
+set rnu
 set tabpagemax=7
 set showtabline=2
 " hide gui labels for gvim

@@ -11,7 +11,7 @@ function moveAndResize(scaleX, scaleY, posX, posY)
     -- its a rectangle, hs.geometry class
     local max = screen:frame()
 
-    -- Window size 
+    -- Window size
     f.w = max.w * (scaleX or 1)
     f.h = max.h * (scaleY or 1)
 
@@ -75,7 +75,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Left", function()
     win:setFrame(f)
 end)
 
--- take all screen space 
+-- take all screen space
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Up", function()
     -- window
     local win = hs.window.focusedWindow()
@@ -97,6 +97,7 @@ end)
 -- Replicating some i3 functionality
 -- focus on window west(right)
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "h", function()
+--hs.hotkey.bind({"cmd", "shift"}, "h", function()
     -- window
     local win = hs.window.focusWindowWest()
 end)
@@ -107,13 +108,13 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "l", function()
     local win = hs.window.focusWindowEast()
 end)
 
--- focus on window below 
+-- focus on window below
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "j", function()
     -- window
     local win = hs.window.focusWindowSouth()
 end)
 
--- focus on window above 
+-- focus on window above
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "k", function()
     -- window
     local win = hs.window.focusWindowNorth()

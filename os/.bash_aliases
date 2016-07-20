@@ -6,13 +6,9 @@ alias hi='echo 4296 | sudo tee /sys/class/backlight/intel_backlight/brightness'
 # FILE MANAGEMENT
 alias lsda='ls -lah --group-directories-first'
 alias lsd='ls -lh --group-directories-first'
-alias off='sudo shutdown now'
-alias reboot='sudo reboot'
 
 # SSH/VNC
 alias share0='x11vnc -display :0'
-alias remote='ssh -X s8z8@remote.ugrad.cs.ubc.ca'
-alias moshremote='ssh s8z8@remote.ugrad.cs.ubc.ca'
 
 # MONITOR
 alias monitor43='xrandr --output VGA1 --mode 1280x1024 --output LVDS1 --off && bigfeh'
@@ -54,9 +50,11 @@ alias bigfeh='feh --bg-scale ~/Pictures/Nebulacity.jpg'
 
 # system
 alias suspend='systemctl suspend'
+alias off='sudo shutdown now'
+alias reboot='sudo reboot'
 
-
-alias p3='python3'
-
+alias p3='python3.5'
 
 alias mnt-remote='sshfs s8z8@remote.ugrad.cs.ubc.ca:/home/s/s8z8/415/cs415a3_s8z8 /home/sergey/mnt/remote415/'
+
+alias vim="/usr/local/bin/vim"
