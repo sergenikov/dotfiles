@@ -126,7 +126,6 @@ set tags=tags;
 "Key and command mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set leader key
-
 nnoremap <F2>  :set hlsearch!
 nnoremap <F3>  :set cursorline!
 nnoremap <F4>  :noh<CR>
@@ -148,6 +147,7 @@ nnoremap <F5> :NERDTreeToggle<CR>
 
 " tagbar toggle - show file structure, functions and stuff
 nnoremap <F6> :TagbarToggle<CR>
+
 " jj to <esc>
 inoremap jj <esc>
 
@@ -159,6 +159,7 @@ command! SolDark call SetSolarized("dark")
 command! Comment normal mq^i//<esc>`q
 command! Uncomment normal mq^2x<esc>`q
 
+" golang
 nnoremap <C-j> :GoDef<CR>
 
 command! Hd1 normal 80i=<esc>
@@ -170,23 +171,27 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 "inoremap <C-BS> <C-w>
 
+" brackets autoclose
+inoremap {<CR> {<CR>}<C-o>O}
+
+"
+" vanilla bracket autocompletion
+" DID NOT TEST, JUST COPIED FOR NOT
+" http://vim.wikia.com/wiki/Automatically_append_closing_characters
+"ino " "<left>
+"ino ' '<left>
+"ino ( ()<left>
+"ino [ []<left>
+"ino { {}<left>
+"ino {<CR> {<CR>}<ESC>O}}])'"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color term settings for different terminals
-" TODO this config is not right, but it is working for the time being.
 " Dealing with 256 colors over ssh on remote university machines is tricky.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if $COLORTERM == 'gnome-terminal'
-      set t_Co=256
-endif
-
 if $TERM == 'xterm-256color'
     set t_Co=256
 endif
-
-if $COLORTERM == 'xterm'
-      set t_Co=256
-endif
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -348,3 +353,4 @@ endfunction
 
 
 "source /home/sergey/.vimconfig/.neocomprc
+
