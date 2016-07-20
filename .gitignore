@@ -1,3 +1,5 @@
 .tmux/resurrect/*
 os/ranger/bookmarks
 os/ranger/history
+.emacs.d/ac-comphist.dat
+.vim/bundle/delimitMate/.netrwhist
