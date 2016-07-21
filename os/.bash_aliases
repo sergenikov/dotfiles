@@ -58,3 +58,5 @@ alias p3='python3.5'
 alias mnt-remote='sshfs s8z8@remote.ugrad.cs.ubc.ca:/home/s/s8z8/415/cs415a3_s8z8 /home/sergey/mnt/remote415/'
 
 alias vim="/usr/local/bin/vim"
+
+alias mvim="mvim --remote"
