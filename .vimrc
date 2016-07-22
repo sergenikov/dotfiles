@@ -69,11 +69,6 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set bold comments in GUI and term
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-highlight Comment gui=bold
-highlight Comment cterm=bold
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set tabstop=4 for python and add python highlighting
@@ -189,10 +184,11 @@ inoremap {<CR> {<CR>}<C-o>O}
 " Color term settings for different terminals
 " Dealing with 256 colors over ssh on remote university machines is tricky.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if $TERM == 'xterm-256color'
-    set t_Co=256
-endif
+"if $TERM == 'xterm-256color'
+"    set t_Co=256
+"endif
 
+set t_Co=256
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "folding setup
@@ -224,10 +220,10 @@ set foldlevel=99
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " color schemes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:solarized_termcolors=256
-set background=light
-set background=dark
-colorscheme monokai 
+"let g:solarized_termcolors=256
+"set background=light
+"set background=dark
+colorscheme morning
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
