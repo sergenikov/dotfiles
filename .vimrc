@@ -52,6 +52,8 @@ set title                       "change terminal title
 set guioptions-=m
 set guioptions-=T
 
+set showcmd
+
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,6 +171,7 @@ inoremap <C-b> <Left>
 " brackets autoclose
 inoremap {<CR> {<CR>}<C-o>O}
 
+
 "
 " vanilla bracket autocompletion
 " DID NOT TEST, JUST COPIED FOR NOT
@@ -223,7 +226,7 @@ set foldlevel=99
 "let g:solarized_termcolors=256
 "set background=light
 "set background=dark
-colorscheme morning
+colorscheme monokai 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -255,16 +258,18 @@ set expandtab
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" configure font for gvim
+" configure font for gvim and mvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui_running")
+    "set guifont = Monospace\ 9
+    if has("gui_mac") || has("gui_macvim")
+        colorscheme monokai
+        set transparency=3
+    endif
     if has("gui_gtk2")
-        set guifont=Monospace\ 9
         colorscheme monokai 
     endif
 endif
-"gui configuration done
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " configure airline

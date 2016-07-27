@@ -1,5 +1,8 @@
 hs.window.animationDuration = 0
 
+-- prefix = {"cmd", "alt", "ctrl"}
+prefix = {"cmd", "ctrl"}
+
 function moveAndResize(scaleX, scaleY, posX, posY)
     -- window
     local win = hs.window.focusedWindow()
@@ -23,27 +26,27 @@ function moveAndResize(scaleX, scaleY, posX, posY)
 end
 
 -- move to top left corner
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "U", function()
+hs.hotkey.bind(prefix, "U", function()
   moveAndResize(1/2, 1/2, 0, 0)
 end)
 
 -- move to bottom left corner
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "N", function()
+hs.hotkey.bind(prefix, "N", function()
   moveAndResize(1/2, 1/2, 0, 1/2)
 end)
 
 -- move to top right corner
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "I", function()
+hs.hotkey.bind(prefix, "I", function()
   moveAndResize(1/2, 1/2,  1/2, 0)
 end)
 
 -- move to bottom right corner
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function()
+hs.hotkey.bind(prefix, "M", function()
   moveAndResize(1/2, 1/2,  1/2, 1/2)
 end)
 
 -- align right 1/2 screen full height
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Right", function()
+hs.hotkey.bind(prefix, "Right", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
@@ -57,7 +60,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Right", function()
 end)
 
 -- align left 1/2 screen full height
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Left", function()
+hs.hotkey.bind(prefix, "Left", function()
     -- window
     local win = hs.window.focusedWindow()
     -- frame of focused window
@@ -76,7 +79,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Left", function()
 end)
 
 -- take all screen space
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Up", function()
+hs.hotkey.bind(prefix, "Up", function()
     -- window
     local win = hs.window.focusedWindow()
     -- frame of focused window
@@ -96,32 +99,32 @@ end)
 
 -- Replicating some i3 functionality
 -- focus on window west(right)
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "h", function()
+hs.hotkey.bind(prefix, "h", function()
 --hs.hotkey.bind({"cmd", "shift"}, "h", function()
     -- window
     local win = hs.window.focusWindowWest()
 end)
 
 -- window east(left)
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "l", function()
+hs.hotkey.bind(prefix, "l", function()
     -- window
     local win = hs.window.focusWindowEast()
 end)
 
 -- focus on window below
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "j", function()
+hs.hotkey.bind(prefix, "j", function()
     -- window
     local win = hs.window.focusWindowSouth()
 end)
 
 -- focus on window above
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "k", function()
+hs.hotkey.bind(prefix, "k", function()
     -- window
     local win = hs.window.focusWindowNorth()
 end)
 
 -- reload config
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+hs.hotkey.bind(prefix, "R", function()
     hs.reload()
     hs.alert.show("Config reloaded")
 end)

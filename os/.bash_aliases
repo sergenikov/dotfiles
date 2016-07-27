@@ -1,3 +1,5 @@
+
+
 # BACKLIGHT
 alias lo='echo 812 | sudo tee /sys/class/backlight/intel_backlight/brightness'
 alias mid='echo 2446 | sudo tee /sys/class/backlight/intel_backlight/brightness'
@@ -56,8 +58,5 @@ alias reboot='sudo reboot'
 alias p3='python3.5'
 
 alias mnt-remote='sshfs s8z8@remote.ugrad.cs.ubc.ca:/home/s/s8z8/415/cs415a3_s8z8 /home/sergey/mnt/remote415/'
-
-alias vi="/usr/local/bin/vim"
-alias vim="vim --remote"
 
 alias mvim="mvim --remote"
