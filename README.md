@@ -3,7 +3,7 @@ This is my vim and tmux config files. All plugin and colorscheme credit goes to 
 
 ## After cloning do:
 ```
-$ git submodules init
-$ git submodules update
+$ git submodule init
+$ git submodule update
 $ git submodule update --recursive
 ```
