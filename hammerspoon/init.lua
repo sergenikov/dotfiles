@@ -100,27 +100,33 @@ end)
 -- Replicating some i3 functionality
 -- focus on window west(right)
 hs.hotkey.bind(prefix, "h", function()
---hs.hotkey.bind({"cmd", "shift"}, "h", function()
     -- window
-    local win = hs.window.focusWindowWest()
+    -- local win = hs.window.focusWindowWest()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow():focusWindowWest()
+    else
+	hs.alert.show("Config reloaded")	 
 end)
 
 -- window east(left)
 hs.hotkey.bind(prefix, "l", function()
     -- window
-    local win = hs.window.focusWindowEast()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow():focusWindowEast()
+    else
+	hs.alert.show("No active window")
 end)
 
 -- focus on window below
 hs.hotkey.bind(prefix, "j", function()
     -- window
-    local win = hs.window.focusWindowSouth()
+    local win = hs.window.focusedWindow():focusWindowSouth()
 end)
 
 -- focus on window above
 hs.hotkey.bind(prefix, "k", function()
     -- window
-    local win = hs.window.focusWindowNorth()
+    local win = hs.window.focusedWindow():focusWindowNorth()
 end)
 
 -- reload config

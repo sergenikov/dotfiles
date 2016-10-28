@@ -13,12 +13,14 @@ set guitablabel=%t
 set backspace=2
 set linebreak
 " change vim directory current file directory
-set autochdir
+"set autochdir
 set hlsearch
 set incsearch
 set hidden
 " mouse can't select text, just position
-set mouse=nicr
+"set mouse=nicr
+"this mouse settings makes copy-pasting on mac easier with SHIFT pressed
+set mouse="" "
 " set tab and autoindent width to 2 spaces
 "set shiftwidth=2
 "set softtabstop=2
@@ -43,6 +45,15 @@ set undolevels=1000             "more undo levels
 set title                       "change terminal title
 "set visualbell                  "don't beep
 "set noerrorbells                "don't beep
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+set clipboard=unnamed
 
 "terminal background for custom themes
 "highlight Normal ctermbg=none
@@ -116,7 +127,7 @@ let g:ctrlp_user_command = 'find %s -type f'
 " :CtrlPTag function searches in the tags file. Function is defined in CtrlP
 nnoremap <leader>. :CtrlPTag<CR>
 "for tags file first search current dir, then parent dir and so on
-set tags=tags;
+set tags=./tags,tags;$HOME
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,7 +180,7 @@ inoremap <C-b> <Left>
 "inoremap <C-BS> <C-w>
 
 " brackets autoclose
-inoremap {<CR> {<CR>}<C-o>O}
+" inoremap {<CR> {<CR>}<C-o>O}
 
 
 "
