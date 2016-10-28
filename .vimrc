@@ -53,7 +53,7 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-set clipboard=unnamed
+"set clipboard=unnamed
 
 "terminal background for custom themes
 "highlight Normal ctermbg=none
