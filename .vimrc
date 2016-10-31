@@ -53,7 +53,7 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-"set clipboard=unnamed
+set clipboard=unnamed
 
 "terminal background for custom themes
 "highlight Normal ctermbg=none
@@ -64,6 +64,9 @@ set guioptions-=m
 set guioptions-=T
 
 set showcmd
+
+" Changed for git-gutter plugin
+set updatetime=1000
 
 syntax on
 
