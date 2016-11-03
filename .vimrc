@@ -20,7 +20,7 @@ set hidden
 " mouse can't select text, just position
 "set mouse=nicr
 "this mouse settings makes copy-pasting on mac easier with SHIFT pressed
-set mouse="" "
+set mouse=""
 " set tab and autoindent width to 2 spaces
 "set shiftwidth=2
 "set softtabstop=2
