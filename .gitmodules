@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".tmux/plugins/powerline"]
+	path = .tmux/plugins/powerline
+	url = https://github.com/powerline/powerline.git

@@ -1,14 +1,13 @@
 execute pathogen#infect()
 filetype indent plugin on
 
+syntax on
+
 let mapleader = ","
 set nu
 set rnu
 set tabpagemax=7
 set showtabline=2
-" hide gui labels for gvim
-set guitablabel=%t
-"set guioptions=agim
 "correct backspace issues - 2 makes it always on
 set backspace=2
 set linebreak
@@ -17,12 +16,14 @@ set linebreak
 set hlsearch
 set incsearch
 set hidden
-" mouse can't select text, just position
-"set mouse=nicr
+
+"mouse
+"mouse can't select text, just position
+set mouse=nicr
 "this mouse settings makes copy-pasting on mac easier with SHIFT pressed
-set mouse=""
+
 " set tab and autoindent width to 2 spaces
-"set shiftwidth=2
+set shiftwidth=2
 "set softtabstop=2
 
 " configs below thanks to: http://nvie.com/posts/how-i-boosted-my-vim/
@@ -46,6 +47,7 @@ set title                       "change terminal title
 "set visualbell                  "don't beep
 "set noerrorbells                "don't beep
 
+" Useful for <c-x> <c-l> and similar commands
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
 set path+=**
@@ -53,11 +55,8 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
+"clipboard settings - shared cp with system
 set clipboard=unnamed
-
-"terminal background for custom themes
-"highlight Normal ctermbg=none
-"highlight NonText ctermbg=none
 
 " terminal gui options - remove gui
 set guioptions-=m
@@ -68,11 +67,14 @@ set showcmd
 " Changed for git-gutter plugin
 set updatetime=1000
 
-syntax on
+"indent folding
+set foldmethod=indent
+"set foldcolumn=1
+set foldlevel=99
+"syntax folding
+"set foldmethod=syntax
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" turn on NERDcommenter
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 filetype plugin on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -137,9 +139,6 @@ set tags=./tags,tags;$HOME
 "Key and command mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set leader key
-nnoremap <F2>  :set hlsearch!
-nnoremap <F3>  :set cursorline!
-nnoremap <F4>  :noh<CR>
 nnoremap <Space>  :noh<CR>
 "quickly inserts ; at the end of the line
 inoremap <C-e> <esc>A;<esc>
@@ -153,26 +152,17 @@ nnoremap <leader>s :w<CR>
 "map save :w operation
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>
-
-nnoremap <F5> :NERDTreeToggle<CR>
-
-" tagbar toggle - show file structure, functions and stuff
-nnoremap <F6> :TagbarToggle<CR>
-
 " jj to <esc>
 inoremap jj <esc>
 
-nnoremap <F7> :set paste!<CR>
-
-command! SolLight call SetSolarized("light")
-command! SolDark call SetSolarized("dark")
-
-command! Comment normal mq^i//<esc>`q
-command! Uncomment normal mq^2x<esc>`q
-
-" golang
+"Golang
 nnoremap <C-j> :GoDef<CR>
 
+"Commands
+command! SolLight call SetSolarized("light")
+command! SolDark call SetSolarized("dark")
+command! Comment normal mq^i//<esc>`q
+command! Uncomment normal mq^2x<esc>`q
 command! Hd1 normal 80i=<esc>
 command! Hd2 normal 80i-<esc>
 command! FH normal 80/-<esc>
@@ -185,31 +175,17 @@ inoremap <C-b> <Left>
 " brackets autoclose
 " inoremap {<CR> {<CR>}<C-o>O}
 
+" Function keys
+nnoremap <F2>  :set hlsearch!<CR>
+nnoremap <F3>  :set cursorline!<CR>
+nnoremap <F4>  :noh<CR>
+nnoremap <F5> :NERDTreeToggle<CR>
+" tagbar toggle - show file structure, functions and stuff
+nnoremap <F6> :TagbarToggle<CR>
+nnoremap <F7> :set paste!<CR>
+nnoremap <F8> :echo expand('%:p')<CR>
 
-"
-" vanilla bracket autocompletion
-" DID NOT TEST, JUST COPIED FOR NOT
-" http://vim.wikia.com/wiki/Automatically_append_closing_characters
-"ino " "<left>
-"ino ' '<left>
-"ino ( ()<left>
-"ino [ []<left>
-"ino { {}<left>
-"ino {<CR> {<CR>}<ESC>O}}])'"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color term settings for different terminals
-" Dealing with 256 colors over ssh on remote university machines is tricky.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"if $TERM == 'xterm-256color'
-"    set t_Co=256
-"endif
-
-set t_Co=256
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"folding setup
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Folding setup
 "mapping of fold toggle to F9
 inoremap <F9> <C-O>za
 nnoremap <F9> za
@@ -223,41 +199,59 @@ nnoremap <C-Right> :bnext<CR>
 "nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 "nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"===indent folding
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldmethod=indent
-"set foldcolumn=1
-set foldlevel=99
 
-"===syntax folding
-"set foldmethod=syntax
+" vanilla bracket autocompletion
+" DID NOT TEST, JUST COPIED
+" http://vim.wikia.com/wiki/Automatically_append_closing_characters
+"ino " "<left>
+"ino ' '<left>
+"ino ( ()<left>
+"ino [ []<left>
+"ino { {}<left>
+"ino {<CR> {<CR>}<ESC>O}}])'"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color term settings for different terminals
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_Co=256
+
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " color schemes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"this helps fix solarized on some terminals
 "let g:solarized_termcolors=256
 "set background=light
 "set background=dark
+
+" monokai looks good on all terminals in 256 colors.
 colorscheme monokai 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set color for 80 characters
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"everything beyond 80 chars will be highlighted in red
+"everything beyond 120 chars will be highlighted in red
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
-
+"match OverLength /\%121v.\+/
+function! Set120(toggle)
+    if a:toggle == 1
+        highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+        match OverLength /\%121v.\+/
+    else
+        highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+        match OverLength /\%121v.\+/
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "NOTE set autocomplete for html on HTML file type open
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-set smartindent
-set shiftwidth=4
-set expandtab
+"set smartindent
+"set shiftwidth=4
+"set expandtab
 
 
 
@@ -274,14 +268,19 @@ set expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " configure font for gvim and mvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" hide gui labels for gvim
+"set guioptions=agim
 if has("gui_running")
     "set guifont = Monospace\ 9
     if has("gui_mac") || has("gui_macvim")
-        colorscheme monokai
+        colorscheme solarized
         set transparency=3
+        set guioptions-=r
     endif
     if has("gui_gtk2")
-        colorscheme monokai 
+        colorscheme solarized 
+        set guioptions-=r
+        set guitablabel=%t
     endif
 endif
 
@@ -358,14 +357,3 @@ function! SetSolarized(color)
     endif
     colorscheme solarized
 endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" execute SetSolarized("light") to set bright solarized background.
-" Function has to be defined before calling it. SolLight command is 
-" bound to this function.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"execute "SolLight"
-
-
-"source /home/sergey/.vimconfig/.neocomprc
-
