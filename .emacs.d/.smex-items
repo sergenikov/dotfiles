@@ -1,0 +1,29 @@
+
+;; ----- smex-history -----
+(
+ load-file
+ package-install
+ package-menu-mode
+ find-file
+ magit-diff-popup
+ magit-diff
+ load-theme
+)
+
+;; ----- smex-data -----
+(
+ (linum-mode . 1)
+ (column-number-mode . 2)
+ (load-file . 4)
+ (grep . 1)
+ (find-file . 3)
+ (helm-projects-find-files . 2)
+ (locate . 1)
+ (server-start . 1)
+ (load-theme . 4)
+ (magit-log . 4)
+ (magit-diff . 1)
+ (magit-diff-popup . 1)
+ (package-install . 5)
+ (package-menu-mode . 1)
+)

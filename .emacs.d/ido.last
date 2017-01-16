@@ -1,0 +1,42 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/sergey/" . ".emacs.d/")
+ ("/Users/sergey/code/" . "dash/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/sergey/.emacs.d/"
+ "/Users/sergey/code/dash/"
+ "/Users/sergey/"
+ "/Users/sergey/code/macha/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "clinic.html"
+ ".bashrc"
+ "Capfile"
+ "*"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/sergey/.emacs.d/" (22652 11768 0 0) "vendor/" "recentf" "network-security.data" "init.el~" "init.el" "ido.last" "helm-adaptive-history" "elpa/" "auto-save-list/" "ac-comphist.dat" ".smex-items" "#init.el#" "../" "./")
+
+ ("/Users/sergey/" (22650 64048 0 0) "work-carecru/" "VirtualBox VMs/" "setup.exe" "rust-projects/" "rethinkdb_data/" "rec.sh" "Public/" "projects/" "production-logs/" "problems/" "Pictures/" "passwords/" "nginx.tar.gz" "Music/" "Movies/" "mounts/" "macha-bucket/" "Library/" "img/" "dump.rdb" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "code/" "carecru/" "bucket-size.sh" "box/" "bin/" "Applications/" ".zshrc" ".zlogin" ".Xresources" ".Xauthority" ".vimrc" ".viminfo" ".vim/" ".vagrant.d/" ".Trash/" ".tmux.conf" ".tmux/" ".subversion/" ".stCommitMsg" ".ssh/" ".rvm/" ".rnd" ".profile" ".oracle_jre_usage/" ".npm/" ".node-gyp/" ".mysql_history" ".mkshrc" ".m2/" ".local/" ".lesshst" ".hyper_plugins/" ".hyper.js" ".hgignore_global" ".hammerspoon/" ".gnupg/" ".gitkraken/" ".gitignore_global" ".gitconfig" ".gem/" ".emacs.d/" ".DS_Store" ".docker/" ".cups/" ".config/" ".CFUserTextEncoding" ".cargo/" ".cache/" ".bundle/" ".bashrc" ".bash_sessions/" ".bash_profile~" ".bash_profile.pysave" ".bash_profile" ".bash_history" ".bash_aliases" ".babel.json" ".aws/" ".atom/" "../" "./")
+
+ ("/Users/" (22452 51802 0 0) "Shared/" "sergey/" "Guest/" ".localized" "../" "./")
+
+ ("/Users/sergey/code/macha/" (22607 10894 0 0) "vendor/" "Vagrantfile" "tmp/" "test/" "tags" "stdout" "spec/" "solr/" "script/" "routes.txt" "REVISION" "README.md" "Rakefile" "public/" "Procfile" "new-server-install.sh" "modules/" "maps-insertions.js" "log/" "lib/" "iam-policy.json" "Gemfile.lock" "Gemfile" "features/" "dump.rdb" "Dockerfile" "docker-compose.yml" "doc/" "db/" "config.ru" "config/" "Capfile" "app/" ".rspec" ".gitignore" ".git/" ".env" ".DS_Store" "../" "./")
+
+ ("/Users/sergey/code/dash/" (22627 62606 0 0) "tags" "server/" "scratch" "rethinkdb_data/" "README.md" "Procfile_dev" "Procfile" "payload.txt" "package.json" "nohup.out" "nodemon.json" "node_modules/" "clinic.html" "client/" "app.json" ".gitignore" ".git/" ".eslintrc" "../" "./")
+
+ ("/Users/sergey/code/" (22627 60658 0 0) "update-server/" "Untitled.txt" "sync-monitor/" "sync-client/" "stdout" "scheduling-widget/" "redis.conf" "raspberry/" "pilsner/" "pepperoni/" "nuts/" "node-mssql/" "nginx.conf" "new-server-install.sh" "macha-misc/" "macha/" "lager/" "import_scripts/" "dash/" "carecru-net-cert/" "backup-win-path.txt" "aws-commands.txt" "analytics/" "accept-clinic.logs.txt" ".DS_Store" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
