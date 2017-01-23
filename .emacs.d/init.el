@@ -13,31 +13,28 @@
 
 ;; Define default packages
 (defvar sergey/packages '(ac-slime
+                          slime
                           auto-complete
                           autopair
                           csharp-mode
-                          deft
                           flycheck
                           go-autocomplete
                           go-eldoc
                           go-mode
-                          haml-mode
                           magit
                           markdown-mode
                           marmalade
                           nodejs-repl
                           paredit
-                          restclient
-                          rvm
                           sml-mode
-                          solarized-theme
-                          monokai-theme
-                          atom-dark-theme
                           web-mode
                           yaml-mode
                           evil
                           smex
                           projectile
+                          solarized-theme
+                          monokai-theme
+                          atom-dark-theme
 			  )
   "Default packages")
 
@@ -65,8 +62,6 @@
 ;; Writing with selected text will overwrite that text
 (delete-selection-mode t)
 ;; Turn on highlighting similar to other editors
-(transient-mark-mode t)
-;; Make Emacs clipboard work with system clipboard
 (setq x-select-enable-clipboard t)
 
 ;; Display settings
@@ -93,7 +88,7 @@
 ;;(global-set-key (kbd "C-+") 'text-scale-increase)
 ;;(global-set-key (kbd "C--") 'text-scale-decrease)
 ;;(global-set-key (kbd "C-c C-k") 'compile)
-;;(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;;Turn down the time to echo keystrokes so I don't have to wait around for things to happen.
 ;;Dialog boxes are also a bit annoying, so just have Emacs use the echo area for everything.
@@ -193,9 +188,9 @@
             (go-eldoc-setup)
             (add-hook 'before-save-hook 'gofmt-before-save)))
 
-;; Set solarized theme in graphical environment, wombat in terminal
+;; Set theme in graphical environment, wombat in terminal
 (if window-system
-    (load-theme 'solarized-light t)
+    (load-theme 'adwaita t)
   (load-theme 'wombat t))
 
 ;; Evil mode
@@ -275,7 +270,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (ztree ac-helm yaml-mode web-mode solarized-theme sml-mode rvm restclient paredit nodejs-repl monokai-theme marmalade markdown-mode magit haml-mode go-eldoc go-autocomplete flycheck evil deft csharp-mode autopair atom-dark-theme ac-slime)))
+    (ztree yaml-mode web-mode solarized-theme sml-mode restclient paredit nodejs-repl monokai-theme marmalade markdown-mode magit haml-mode go-eldoc go-autocomplete flycheck evil deft csharp-mode autopair atom-dark-theme ac-slime)))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
