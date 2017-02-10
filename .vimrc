@@ -56,7 +56,7 @@ set path+=**
 set wildmenu
 
 "clipboard settings - shared cp with system
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " terminal gui options - remove gui
 set guioptions-=m
@@ -104,27 +104,29 @@ filetype indent plugin on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CtrlP setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"/set runtimepath^=~/.vim/bundle/ctrlp.vim
+if exists("g:ctrlp_user_command")
+	unlet g:ctrlp_user_command
+endif
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRU<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" custom ctrlp ignore settings
+" ctrlp ignore settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-unlet g:ctrlp_custom_ignore
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
-    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+let g:ctrlp_custom_ignore = { 'dir': 'node_modules' }
+let g:ctrlp_custom_ignore = { 'dir': 'build$\|node_modules$' }
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+"    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+"    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
-let g:ctrlp_user_command = 'find %s -type f'
-""" CtrlP setup done
-
+"let g:ctrlp_user_command = 'find %s -type f'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctags and ctrp setup
@@ -134,6 +136,10 @@ nnoremap <leader>. :CtrlPTag<CR>
 "for tags file first search current dir, then parent dir and so on
 set tags=./tags,tags;$HOME
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" javascript
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:javascript_plugin_jsdoc = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Key and command mappings
@@ -227,7 +233,7 @@ set t_Co=256
 "set background=dark
 
 " monokai looks good on all terminals in 256 colors.
-colorscheme monokai 
+colorscheme atom-dark-256 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -273,12 +279,12 @@ endfunction
 if has("gui_running")
     "set guifont = Monospace\ 9
     if has("gui_mac") || has("gui_macvim")
-        colorscheme solarized
+        colorscheme atom-dark-256
         set transparency=3
         set guioptions-=r
     endif
     if has("gui_gtk2")
-        colorscheme solarized 
+        colorscheme atom-dark-256 
         set guioptions-=r
         set guitablabel=%t
     endif
