@@ -27,7 +27,7 @@ set shiftwidth=2
 "set softtabstop=2
 
 " configs below thanks to: http://nvie.com/posts/how-i-boosted-my-vim/
-"set nowrap                      "don't wrap lines
+set nowrap                      "don't wrap lines
 set tabstop=4                   "tab is four spaces
 set backspace=indent,eol,start  "allow backspacing over everthing in insert mode
 set autoindent                  "always set autoindenting on
@@ -76,6 +76,34 @@ set foldlevel=99
 
 
 filetype plugin on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" syntastic configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_javascript_checkers = ['./node_modules/eslint/bin/eslint.js']
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+"let g:syntastic_debug = 3
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-go configuration
@@ -216,6 +244,9 @@ nnoremap <C-Right> :bnext<CR>
 "ino { {}<left>
 "ino {<CR> {<CR>}<ESC>O}}])'"
 
+map <C-L> 10zl " Scroll 20 characters to the right
+map <C-H> 10zh " Scroll 20 characters to the left
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color term settings for different terminals
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -282,9 +313,12 @@ if has("gui_running")
         colorscheme atom-dark-256
         set transparency=3
         set guioptions-=r
+        colorscheme molokai
+        " turn bell off
+        set vb t_vb=
     endif
     if has("gui_gtk2")
-        colorscheme atom-dark-256 
+        colorscheme molokai
         set guioptions-=r
         set guitablabel=%t
     endif
