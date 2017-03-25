@@ -41,7 +41,6 @@ inoremap <C-b> <Left>
 " Function keys
 nnoremap <F2>  :set hlsearch!<CR>
 nnoremap <F3>  :set cursorline!<CR>
-nnoremap <F4>  :noh<CR>
 nnoremap <F5> :NERDTreeToggle<CR>
 " tagbar toggle - show file structure, functions and stuff
 nnoremap <F6> :TagbarToggle<CR>
