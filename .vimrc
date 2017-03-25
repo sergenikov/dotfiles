@@ -103,5 +103,6 @@ set foldlevel=99
 "syntax folding
 "set foldmethod=syntax
 
-" source plugin configuration
+source $HOME/dotfiles/.functions.vim
 source $HOME/dotfiles/.config.vim
+source $HOME/dotfiles/.keys.vim

@@ -1,5 +1,30 @@
 filetype plugin on
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  GUI configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" hide gui labels for gvim
+"set guioptions=agim
+if has("gui_running")
+  call VimOneColor()
+
+  set guioptions-=r
+
+  " turn bell off
+  set vb t_vb= 
+
+  if has("gui_mac") || has("gui_macvim")
+    set guifont=Menlo:h12
+    set transparency=3
+
+  elseif has("gui_gtk2")
+    set guitablabel=%t
+  endif
+
+else
+  colorscheme molokai
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntastic configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -94,93 +119,11 @@ set tags=./tags,tags;$HOME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:javascript_plugin_jsdoc = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Key and command mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set leader key
-nnoremap <Space>  :noh<CR>
-"quickly inserts ; at the end of the line
-inoremap <C-e> <esc>A;<esc>
-"insert comments
-nnoremap <C-_> mq^i//<esc>`q
-nnoremap <A-/> mq^i//<esc>`q
-"switching buffers
-nnoremap <leader>h :bprevious<CR>
-nnoremap <leader>l :bnext<CR>
-nnoremap <leader>s :w<CR>
-"map save :w operation
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <esc>:w<CR>
-" jj to <esc>
-inoremap jj <esc>
-
-"Golang
-nnoremap <C-j> :GoDef<CR>
-
-"Commands
-command! SolLight call SetSolarized("light")
-command! SolDark call SetSolarized("dark")
-command! Comment normal mq^i//<esc>`q
-command! Uncomment normal mq^2x<esc>`q
-command! Hd1 normal 80i=<esc>
-command! Hd2 normal 80i-<esc>
-command! FH normal 80/-<esc>
-
-"Emacs like binding for some commands
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-"inoremap <C-BS> <C-w>
-
-" brackets autoclose
-" inoremap {<CR> {<CR>}<C-o>O}
-
-" Function keys
-nnoremap <F2>  :set hlsearch!<CR>
-nnoremap <F3>  :set cursorline!<CR>
-nnoremap <F4>  :noh<CR>
-nnoremap <F5> :NERDTreeToggle<CR>
-" tagbar toggle - show file structure, functions and stuff
-nnoremap <F6> :TagbarToggle<CR>
-nnoremap <F7> :set paste!<CR>
-nnoremap <F8> :echo expand('%:p')<CR>
-
-"Folding setup
-"mapping of fold toggle to F9
-inoremap <F9> <C-O>za
-nnoremap <F9> za
-onoremap <F9> <C-C>za
-vnoremap <F9> zf
-
-nnoremap <F10> :SyntasticCheck<CR>
-nnoremap <F11> :lclose<CR>
-
-nnoremap <A-Left> :tabprevious<CR>
-nnoremap <A-Right> :tabnext<CR>
-nnoremap <C-Left> :bprevious<CR>
-nnoremap <C-Right> :bnext<CR>
-"nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-"nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
-
-
-" vanilla bracket autocompletion
-" DID NOT TEST, JUST COPIED
-" http://vim.wikia.com/wiki/Automatically_append_closing_characters
-"ino " "<left>
-"ino ' '<left>
-"ino ( ()<left>
-"ino [ []<left>
-"ino { {}<left>
-"ino {<CR> {<CR>}<ESC>O}}])'"
-
-map <C-L> 10zl " Scroll 20 characters to the right
-map <C-H> 10zh " Scroll 20 characters to the left
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color term settings for different terminals
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
-
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -191,8 +134,6 @@ set t_Co=256
 "set background=light
 "set background=dark
 
-" monokai looks good on all terminals in 256 colors.
-colorscheme atom-dark-256 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -229,29 +170,6 @@ endfunction
 ":nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 "autocmd VimEnter * set cursorline!
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" configure font for gvim and mvim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" hide gui labels for gvim
-"set guioptions=agim
-if has("gui_running")
-    "set guifont = Monospace\ 9
-    if has("gui_mac") || has("gui_macvim")
-        colorscheme atom-dark-256
-        set transparency=3
-        set guioptions-=r
-        colorscheme molokai
-        " turn bell off
-        set vb t_vb=
-    endif
-    if has("gui_gtk2")
-        colorscheme molokai
-        set guioptions-=r
-        set guitablabel=%t
-    endif
-endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " configure airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -277,51 +195,5 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-" airline - done
 
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" my function
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Add/remove comments in current line
-" Does not work as needed right now
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! CommentOut(c)
-    "add comment if 0
-    if a:c == 0
-        execute "normal mq^i//\<esc>`q"
-        echom "hello"
-    "remove comment if 
-    else
-        execute "normal mq^xx\<esc>`q"
-    endif
-endfunction
-
-
-"Function for commenting a block of Visually selected text
-function! Comment(fl, ll)
-  let i=a:fl
-  let comment="//"
-  while i<=a:ll
-    let cl=getline(i)
-    let cl2=comment.cl
-    call setline(i, cl2)
-    let i=i+1
-  endwhile
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Setting solarized color scheme takes more than one command
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! SetSolarized(color)
-    let g:solarized_termcolors=256
-    if a:color == "light"
-        set background=light
-    elseif a:color == "dark"
-        set background=dark
-    else
-        echom "Wrong argument. Try light or dark"
-    endif
-    colorscheme solarized
-endfunction
