@@ -15,7 +15,6 @@ if has("gui_running")
 
   if has("gui_mac") || has("gui_macvim")
     set guifont=Menlo:h12
-    set transparency=3
 
   elseif has("gui_gtk2")
     set guitablabel=%t
