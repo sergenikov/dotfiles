@@ -13,3 +13,6 @@
 [submodule ".tmux/plugins/powerline"]
 	path = .tmux/plugins/powerline
 	url = https://github.com/powerline/powerline.git
+[submodule ".vim/bundle/Vundle.vim"]
+  path = .vim/bundle/Vundle.vim
+  url = https://github.com/VundleVim/Vundle.vim.git
