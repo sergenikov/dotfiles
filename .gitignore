@@ -1,5 +1,10 @@
-.tmux/resurrect/*
+.tmux/resurrect
+!.tmux/plugins/tpm
+.tmux/plugins
 os/ranger/bookmarks
 os/ranger/history
 .emacs.d/ac-comphist.dat
 .vim/bundle
+*.swp
+*.swo
+*.el~

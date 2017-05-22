@@ -15,6 +15,7 @@ if has("gui_running")
 
   if has("gui_mac") || has("gui_macvim")
     set guifont=Menlo:h12
+    set guioptions=
 
   elseif has("gui_gtk2")
     set guitablabel=%t
@@ -88,17 +89,17 @@ endif
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>m :CtrlPMRU<CR>
+let g:ctrlp_working_path_mode = 'a'
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
+nnoremap <C-b> :CtrlPBuffer<CR>
+" nnoremap <leader>m :CtrlPMRU<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp ignore settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_custom_ignore = { 'dir': 'node_modules' }
 let g:ctrlp_custom_ignore = { 'dir': 'build$\|node_modules$' }
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:ctrlp_custom_ignore = {
 "    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
 "    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }

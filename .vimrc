@@ -83,6 +83,10 @@ set path+=**
 
 " Display all matching files when we tab complete
 set wildmenu
+" Don't offer to open certain files/directories
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.pdf,*.psd
+set wildignore+=node_modules/*,bower_components/*
 
 "clipboard settings - shared cp with system
 "set clipboard=unnamed
@@ -102,6 +106,8 @@ set foldmethod=indent
 set foldlevel=99
 "syntax folding
 "set foldmethod=syntax
+
+set cursorline
 
 source $HOME/dotfiles/.functions.vim
 source $HOME/dotfiles/.config.vim
