@@ -105,7 +105,8 @@ hs.hotkey.bind(prefix, "h", function()
     if hs.window.focusedWindow() then
         local win = hs.window.focusedWindow():focusWindowWest()
     else
-	hs.alert.show("Config reloaded")	 
+      hs.alert.show("Config reloaded")	 
+    end
 end)
 
 -- window east(left)
@@ -114,7 +115,8 @@ hs.hotkey.bind(prefix, "l", function()
     if hs.window.focusedWindow() then
         local win = hs.window.focusedWindow():focusWindowEast()
     else
-	hs.alert.show("No active window")
+      hs.alert.show("No active window")
+    end
 end)
 
 -- focus on window below
