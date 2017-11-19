@@ -11,6 +11,7 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/sergey/code/carecru/"
  "/Users/sergey/.emacs.d/"
  "/Users/sergey/PycharmProjects/streamer/"
  "/Users/sergey/code/dash/"
@@ -20,6 +21,7 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "problems.txt"
  "init.el"
  "Client.py"
  "main.py"
@@ -33,7 +35,13 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/sergey/.emacs.d/" (22657 44892 0 0) "vendor/" "recentf" "network-security.data" "init.el" "ido.last" "helm-adaptive-history" "elpa/" "auto-save-list/" "ac-comphist.dat" ".smex-items" "../" "./")
+ ("/Users/sergey/code/carecru/" (22835 14053 0 0) "webpack/" "tests/" "statics/" "staging.env" "server/" "sendEmail.js" "scripts/" "rethinkdb_data/" "reseed-staging.sh" "README.md" "Procfile_dev" "Procfile" "problems.txt" "package.json" "nodemon.json" "node_modules/" "feeds.patch" "cypress.json" "create.log" "clinic.html" "client/" "app.json" ".swp" ".storybook/" ".problems.txt.swp" ".idea/" ".gitignore" ".git/" ".eslintrc" ".env" ".editorconfig" ".diff.swp" ".csscomb.json" ".babelrc" "#Procfile#" "../" "./")
+
+ ("/Users/sergey/code/" (22828 42626 0 0) "updater/" "socket.io-appointment-client-java/" "sio-tester/" "S3BuildUploader/" "reseed-staging.sh" "paleale0.jar" "paleale0/" "paleale/" "log.txt" "feeds-rethinkdbdash.js" "carecru.wiki/" "carecru.1/" "carecru/" "bu/" ".DS_Store" "../" "./")
+
+ ("/Users/sergey/.emacs.d/" (22834 61356 0 0) "vendor/" "recentf" "network-security.data" "init.el~" "init.el" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".smex-items" "../" "./")
+
+ ("/Users/sergey/" (22834 61868 0 0) "VirtualBox VMs/" "test.sh" "test.s" "test.c" "test" "rethinkdb_data/" "Public/" "Pictures/" "Music/" "Movies/" "live-hosts.log" "Library/" "github.com/" "eclipse/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "code/" "carecru_setup_v2.0.113-113.exe" "appts.json~" "appts.json" "Applications/" ".vimrc" ".viminfo" ".vim/" ".v8flags.5.1.281.101.d947f2def6d2f32c2fc7df910ed00600.json" ".Trash/" ".tooling/" ".tmux.conf" ".tmux/" ".swp" ".ssh/" ".profile" ".p2/" ".oracle_jre_usage/" ".nvm/" ".npm/" ".notes" ".node_repl_history" ".node-gyp/" ".netrc" ".local/" ".lesshst" ".hammerspoon/" ".gradle/" ".gitconfig" ".git/" ".functions.vim" ".emacs.d/" ".elinks/" ".eclipse/" ".DS_Store" ".config.vim" ".config/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_sessions/" ".bash_history" ".bash_aliases" ".babel.json" ".aws/" "'" "../" "./")
 
  ("/Users/" (22499 17342 0 0) "Shared/" "sergey/" "Guest/" ".localized" "../" "./")
 
@@ -53,15 +61,11 @@
 
  ("/Users/sergey/PycharmProjects/streamer/" (22656 18948 0 0) "StreamingServer.py" "Streamer.py" "song.wav" "SFAdapter.py" "Server.py" "Playback.py" "main.py" "log.txt" "Client.py" "bin.log" "__pycache__/" ".idea/" ".gitignore" ".git/" "../" "./")
 
- ("/Users/sergey/" (22656 18618 0 0) "work/" "vm-archive/" "VirtualBox VMs/" "src/" "share/" "PycharmProjects/" "Public/" "projects/" "Pictures/" "Music/" "Movies/" "Library/" "leetcode/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "cracking/" "code/" "bin/" "Applications/" "292.py" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".tmux.conf" ".tmux/" ".subversion/" ".ssh/" ".python_history" ".profile" ".oracle_jre_usage/" ".lesshst" ".hammerspoon/" ".gitconfig" ".emacs.d/" ".DS_Store" ".config/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile" ".bash_history" ".atom/" "../" "./")
-
  ("/Users/sergey/dotfiles/.emacs.d/" (22653 44344 0 0) "vendor/" "recentf" "network-security.data" "init.el" "ido.last" "helm-adaptive-history" "elpa/" "auto-save-list/" "ac-comphist.dat" ".smex-items" "../" "./")
 
  ("/Users/sergey/PycharmProjects/" (22642 57536 0 0) "streamer/" ".DS_Store" "../" "./")
 
  ("/Users/sergey/code/dash/" (22627 62606 0 0) "tags" "server/" "scratch" "rethinkdb_data/" "README.md" "Procfile_dev" "Procfile" "payload.txt" "package.json" "nohup.out" "nodemon.json" "node_modules/" "clinic.html" "client/" "app.json" ".gitignore" ".git/" ".eslintrc" "../" "./")
-
- ("/Users/sergey/code/" (22627 60658 0 0) "update-server/" "Untitled.txt" "sync-monitor/" "sync-client/" "stdout" "scheduling-widget/" "redis.conf" "raspberry/" "pilsner/" "pepperoni/" "nuts/" "node-mssql/" "nginx.conf" "new-server-install.sh" "macha-misc/" "macha/" "lager/" "import_scripts/" "dash/" "carecru-net-cert/" "backup-win-path.txt" "aws-commands.txt" "analytics/" "accept-clinic.logs.txt" ".DS_Store" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----

@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ evil-mode
  package-delete
  term
  apropos
  mark-whole-buffer
  beginning-of-buffer
  xref-find-definitions
- kill-region
 )
 
 ;; ----- smex-data -----
@@ -49,4 +49,5 @@
  (simplified-begining-of-buffer . 4)
  (beginning-of-buffer . 1)
  (term . 2)
+ (evil-mode . 2)
 )
