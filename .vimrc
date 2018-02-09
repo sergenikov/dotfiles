@@ -26,6 +26,8 @@ Plugin 'pangloss/vim-javascript.git'
 Plugin 'mxw/vim-jsx.git'
 Plugin 'rakr/vim-one.git'
 Plugin 'mileszs/ack.vim.git'
+Plugin 'https://github.com/ternjs/tern_for_vim.git'
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/wincent/command-t.git'
 
 " All of your Plugins must be added before the following line

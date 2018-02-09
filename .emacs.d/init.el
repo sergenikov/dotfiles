@@ -195,7 +195,7 @@
 
 ;; Evil mode
 (setq evil-want-C-u-scroll t)
-(evil-mode 1)
+(evil-mode 0)
 
 ;; Server start
 (server-start)
