@@ -196,4 +196,8 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-
+" command-t
+let g:CommandTInputDebound = 2
+let g:CommandTMaxFiles = 200000
+let g:CommandTFileScanner = "git"
+let g:CommandTIgnoreCase = 1

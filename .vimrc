@@ -38,7 +38,7 @@ syntax on
 
 let mapleader = ","
 set nu
-set rnu
+"set rnu
 set tabpagemax=7
 set showtabline=2
 "correct backspace issues - 2 makes it always on
@@ -92,7 +92,7 @@ set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
 
 "clipboard settings - shared cp with system
-"set clipboard=unnamed
+set clipboard=unnamed
 
 " terminal gui options - remove gui
 set guioptions-=m

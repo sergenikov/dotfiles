@@ -1,138 +1,95 @@
-hs.window.animationDuration = 0
+local log = hs.logger.new('init', 'info')
 
--- prefix = {"cmd", "alt", "ctrl"}
-prefix = {"cmd", "ctrl"}
 
-function moveAndResize(scaleX, scaleY, posX, posY)
-    -- window
-    local win = hs.window.focusedWindow()
-    -- frame of focused window
-    local f = win:frame()
-    -- screen of window
-    local screen = win:screen()
-    -- screen frame without dock or menu, its height.
-    -- its a rectangle, hs.geometry class
-    local max = screen:frame()
+--------------------------------------------------------------------------------
+-- Move windows around
+--------------------------------------------------------------------------------
+-- y   k   u
+-- h       l
+-- b   j   n
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Y", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
 
-    -- Window size
-    f.w = max.w * (scaleX or 1)
-    f.h = max.h * (scaleY or 1)
-
-    -- Window Position
-    --  = size  + (width * (desired position or 0))
-    f.x = max.x + (max.w * (posX or 0))
-    f.y = max.y + (max.h * (posY or 0))
-    win:setFrame(f)
-end
-
--- move to top left corner
-hs.hotkey.bind(prefix, "U", function()
-  moveAndResize(1/2, 1/2, 0, 0)
+  f.x = f.x - 10
+  f.y = f.y - 10
+  win:setFrame(f)
 end)
 
--- move to bottom left corner
-hs.hotkey.bind(prefix, "N", function()
-  moveAndResize(1/2, 1/2, 0, 1/2)
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+
+  f.y = f.y - 10
+  win:setFrame(f)
 end)
 
--- move to top right corner
-hs.hotkey.bind(prefix, "I", function()
-  moveAndResize(1/2, 1/2,  1/2, 0)
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "U", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+
+  f.x = f.x + 10
+  f.y = f.y - 10
+  win:setFrame(f)
 end)
 
--- move to bottom right corner
-hs.hotkey.bind(prefix, "M", function()
-  moveAndResize(1/2, 1/2,  1/2, 1/2)
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+
+  f.x = f.x - 10
+  win:setFrame(f)
 end)
 
--- align right 1/2 screen full height
-hs.hotkey.bind(prefix, "Right", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
 
-    f.x = max.x + (max.w / 2)
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
+  f.x = f.x + 10
+  win:setFrame(f)
 end)
 
--- align left 1/2 screen full height
-hs.hotkey.bind(prefix, "Left", function()
-    -- window
-    local win = hs.window.focusedWindow()
-    -- frame of focused window
-    local f = win:frame()
-    -- screen of window
-    local screen = win:screen()
-    -- screen frame without dock or menu, its height.
-    -- its a rectangle, hs.geometry class
-    local max = screen:frame()
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "B", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
 
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
+  f.x = f.x - 10
+  f.y = f.y + 10
+  win:setFrame(f)
 end)
 
--- take all screen space
-hs.hotkey.bind(prefix, "Up", function()
-    -- window
-    local win = hs.window.focusedWindow()
-    -- frame of focused window
-    local f = win:frame()
-    -- screen of window
-    local screen = win:screen()
-    -- scren frame without dock or menu, its height.
-    -- its a rectangle, hs.geometry class
-    local max = screen:frame()
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
 
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w
-    f.h = max.h
-    win:setFrame(f)
+  f.y = f.y + 10
+  win:setFrame(f)
 end)
 
--- Replicating some i3 functionality
--- focus on window west(right)
-hs.hotkey.bind(prefix, "h", function()
-    -- window
-    -- local win = hs.window.focusWindowWest()
-    if hs.window.focusedWindow() then
-        local win = hs.window.focusedWindow():focusWindowWest()
-    else
-      hs.alert.show("Config reloaded")	 
-    end
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "N", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+
+  f.x = f.x + 10
+  f.y = f.y + 10
+  win:setFrame(f)
 end)
 
--- window east(left)
-hs.hotkey.bind(prefix, "l", function()
-    -- window
-    if hs.window.focusedWindow() then
-        local win = hs.window.focusedWindow():focusWindowEast()
-    else
-      hs.alert.show("No active window")
-    end
-end)
+local primaryScreen = hs.screen.primaryScreen()
+local rightmostMonitor = primaryScreen
+local middleMonitor = primaryScreen:toWest()
+local laptopScreen = "Color LCD"
 
--- focus on window below
-hs.hotkey.bind(prefix, "j", function()
-    -- window
-    local win = hs.window.focusedWindow():focusWindowSouth()
-end)
+log.i(
+  string.format(
+    "primary screen %s, rightmost screen %s, leftmost screen %s, laptop screen %s",
+    primaryScreen, rightmostMonitor, middleMonitor, laptopScreen
+  )
+)
 
--- focus on window above
-hs.hotkey.bind(prefix, "k", function()
-    -- window
-    local win = hs.window.focusedWindow():focusWindowNorth()
-end)
-
--- reload config
-hs.hotkey.bind(prefix, "R", function()
-    hs.reload()
-    hs.alert.show("Config reloaded")
-end)
+local windowLayout = {
+  {"Google Chrome", nil, rightmostMonitor, hs.layout.left75, nil, nil},
+  {"Signal", nil, rightmostMonitor, hs.layout.left50, nil, nil},
+  {"iTerm2", nil, middleMonitor, hs.layout.right50, nil, nil},
+}
+hs.layout.apply(windowLayout)
